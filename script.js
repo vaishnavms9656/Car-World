@@ -17,9 +17,12 @@ function storeRecords() {
   }
 }
 function retrieveRecords() {
-  if (search_key.value in localStorage) {
-    let Cars = JSON.parse(localStorage.getItem(search_key.value));
-    retrieve.innerHTML = `
+  if ((search_key.value == "")) {
+    alert("Please Enter a Key");
+  } else {
+    if (search_key.value in localStorage) {
+      let Cars = JSON.parse(localStorage.getItem(search_key.value));
+      retrieve.innerHTML = `
          <div class="border shadow bg-white rounded mt-3">
               <h5 class="text-center text-danger mt-2">Car Details</h5>
             <ul class="">
@@ -28,16 +31,20 @@ function retrieveRecords() {
               <li class="list-group-item text-success fw-bolder my-2 ">Key : <span class="text-info">${Cars.key}</span></li>
             </ul>
           </div>`;
-  } else {
-    alert("No Key Found");
-    document.getElementById("retrieve-form").reset();
+    } else {
+      alert("No Key Found");
+      document.getElementById("retrieve-form").reset();
+    }
   }
 }
 function deleteRecords() {
+  if ((delete_key.value == "")) {
+    alert("Please Enter a Key");
+  }else{
   if (delete_key.value in localStorage) {
     msg = confirm("Are You Sure To Delete This");
     if (msg) {
-      localStorage.removeItem(search_key.value);
+      localStorage.removeItem(delete_key.value);
       alert("Item Deleted");
       window.location = `./index.html`;
     }
@@ -45,6 +52,7 @@ function deleteRecords() {
     alert("Key doesnt exist");
     document.getElementById("delete-form").reset();
   }
+}
 }
 function deleteAll() {
   msg = confirm("Are You Sure To Delete All Records");
