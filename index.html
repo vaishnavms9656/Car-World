@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car World</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style>
+        label,
+        input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-lg">
+        <div class="heading text-center mb-3">
+            <h1 class="text-primary">Car World</h1>
+        </div>
+        <div class="main row mx-5">
+            <div class="col-5 enter-details border shadow p-5  bg-white rounded mb-3 ">
+                <div class="">
+                    <form action="" id="add-form">
+                        <h4 class="text-primary text-center">Enter Details</h4>
+                        <div class="form-group">
+                            <label for="brand">Car Brand</label>
+                            <input type="email" class="form-control my-2" id="brand" placeholder="Car Brand"
+                                name="brand">
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="text" class="form-control my-2" id="price" placeholder="Price" name="price">
+                        </div>
+                        <div class="form-group">
+                            <label for="key">Key</label>
+                            <input type="text" class="form-control my-2" id="key" placeholder="Key" name="key">
+                        </div>
+                        <div class="button text-center">
+                            <button type="button" class="btn  btn-outline-success mt-3"
+                                onclick="storeRecords()">Store
+                                Records</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-3 retrieve-results  border shadow p-5  bg-white rounded  mx-4 mb-3">
+                <form action="" id="retrieve-form">
+                    <h4 class="text-primary text-center">Enter Key to Retrieve Item</h4>
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="text" class="form-control my-2" id="search_key" placeholder="Key"
+                            name="search_key">
+                    </div>
+                    <div class="button text-center">
+                        <button type="button" class="btn  btn-outline-primary mt-3" onclick="retrieveRecords()">Retrieve
+                            Records</button>
+                    </div>
+                    <div id="retrieve"></div>
+                </form>
+            </div>
+            <div class="col-3 delete-records border shadow p-5  bg-white rounded mb-3">
+                <form action="" id="delete-form">
+                    <h4 class="text-primary text-center">Enter Key to Delete Item</h4>
+                    <div class="form-group">
+                        <label for="key">Key</label>
+                        <input type="text" class="form-control my-2" id="delete_key" placeholder="Key"
+                            name="delete_key">
+                    </div>
+                    <div class="button text-center">
+                        <button type="button" class="btn  btn-outline-danger mt-3" onclick="deleteRecords()">Remove
+                            Records</button>
+                    </div>
+                    <div id="retrieve-results"></div>
+                </form>
+            </div>
+            <button type="button" class="btn w-100 btn-outline-dark px-5" onclick="deleteAll()">Remove
+                Records</button>
+        </div>
+
+    </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
